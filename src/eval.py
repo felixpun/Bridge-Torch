@@ -59,7 +59,7 @@ def load_checkpoint(checkpoint_path, config):
 
     # hydrate agent with parameters from checkpoint
     state_dict = torch.load(checkpoint_path)
-    agent.load_state_dict(state_dict)
+    agent.load_state_dict(state_dict["module"])
     agent.cuda()
     agent.eval()
 
