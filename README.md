@@ -53,7 +53,7 @@ The script loads cofiguration of the checkpoint from a json file in save_dir (e.
 
 ## Provided Checkpoints
 
-Checkpoints for GCBC are available [here]().
+Checkpoints for GCBC are available [here](https://drive.google.com/drive/folders/11d6OPfqE51YHa28Rgwt26u849IaayqAs?usp=sharing).
 
 ## Acknowledgement
 
