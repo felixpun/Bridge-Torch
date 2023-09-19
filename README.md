@@ -29,7 +29,7 @@ To start training run the command below.
 deepspeed src/train.py \
     --steps 300000 \
     --warmup_steps 10000 \
-    --save_dir gcbc_save \
+    --save_dir gc_bc_save \
     --run_name gd_bc \
     --random_seed 42
 ```
@@ -44,12 +44,12 @@ First, set up the robot hardware according to the [official guide](https://docs.
 python src/eval.py \
     --num_timesteps NUM_TIMESTEPS \
     --video_save_path VIDEO_DIR \
-    --checkpoint_path gcbc_save/190000/mp_rank_00_model_states.pt \
-    --config_path  gcbc_save/config.json \
+    --checkpoint_path gc_bc_save/190000/mp_rank_00_model_states.pt \
+    --config_path  gc_bc_save/config.json \
     --blocking
 ```
 
-The script loads cofiguration of the checkpoint from a json file in save_dir (e.g., gcbc_save) output by train.py.
+The script loads cofiguration of the checkpoint from a json file in save_dir (e.g., gc_bc_save) output by train.py.
 
 ## Provided Checkpoints
 
