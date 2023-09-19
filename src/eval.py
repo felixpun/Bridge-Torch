@@ -61,7 +61,7 @@ def load_checkpoint(checkpoint_path, config):
     state_dict = torch.load(checkpoint_path)
     agent.load_state_dict(state_dict)
     agent.cuda()
-    agent.train(False)
+    agent.eval()
 
     # load action metadata
     action_mean = np.array(config.act_mean)
