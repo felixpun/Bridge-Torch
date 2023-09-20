@@ -52,6 +52,8 @@ python src/eval.py \
 
 The script loads cofiguration of the checkpoint from a json file in save_dir (e.g., gc_bc_save) output by train.py.
 
+We will be grateful if you can report your reproduced results on an issue.
+
 ## Provided Checkpoints
 
 Checkpoints for GCBC are available [here](https://drive.google.com/drive/folders/11d6OPfqE51YHa28Rgwt26u849IaayqAs?usp=sharing).
