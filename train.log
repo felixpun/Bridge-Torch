@@ -1,0 +1,579 @@
+[2023-09-18 13:22:24,610] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-09-18 13:22:26,172] [WARNING] [runner.py:203:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+[2023-09-18 13:22:26,193] [INFO] [runner.py:570:main] cmd = /home/hyx/anaconda3/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMV19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None train.py --method gc_bc --steps 300000 --warmup_steps 10000 --save_dir gc_bc_save --random_seed 42
+[2023-09-18 13:22:28,248] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-09-18 13:22:29,763] [INFO] [launch.py:145:main] WORLD INFO DICT: {'localhost': [0, 1]}
+[2023-09-18 13:22:29,763] [INFO] [launch.py:151:main] nnodes=1, num_local_procs=2, node_rank=0
+[2023-09-18 13:22:29,763] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1]})
+[2023-09-18 13:22:29,763] [INFO] [launch.py:163:main] dist_world_size=2
+[2023-09-18 13:22:29,763] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0,1
+[2023-09-18 13:22:32,071] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-09-18 13:22:32,078] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(local_rank=1, sample_weights='balance', num_workers=8, relabel_actions=True, goal_relabeling_strategy='uniform', augment=True, dtype='fp32', encoder='resnetv1-34-bridge', save_dir='gc_bc_save', ckpt_id=None, train_batch_size=256, gradient_accumulation_steps=1, eval_batch_size=256, max_lr=0.0003, min_lr=1e-05, weight_decay=1e-06, max_grad_norm=5.0, epochs=None, steps=300000, warmup_steps=10000, decay_steps=None, log_interval=5000, eval_interval=10000, save_interval=10000, save_best=True, main_metric='log_probs', method='gc_bc', random_seed=42, datasets=['/data/hyx/raw_icra_trajs', '/data/hyx/raw_flap_trajs', '/data/hyx/raw_bridge_data_v1_trajs', '/data/hyx/raw_rss_trajs', '/data/hyx/raw_bridge_data_v2_trajs', '/home/hyx/bridge_data_v2/bridge_torch/data_processing/scipted_trajs'], act_mean=[0.00019296819, 0.00013667766, -0.00014583133, -0.00018390431, -0.00030808983, 0.0002742527, 0.59716219], act_std=[0.00912848, 0.0127196, 0.01229497, 0.02606696, 0.02875283, 0.07807977, 0.48710242], goal_relabeling_kwargs={'reached_proportion': 0.0}, augment_kwargs={'random_resized_crop': {'size': [128, 128], 'scale': [0.8, 1.0], 'ratio': [0.9, 1.1], 'antialias': True}, 'color_jitter': {'brightness': 0.2, 'contrast': [0.8, 1.2], 'saturation': [0.8, 1.2], 'hue': 0.1}, 'augment_order': ['random_resized_crop', 'color_jitter']}, encoder_kwargs={'pooling_method': 'avg', 'add_spatial_coordinates': True, 'act': 'SiLU', 'input_img_shape': [128, 128], 'input_channels': 6})
+[2023-09-18 13:22:33,753] [INFO] [comm.py:637:init_distributed] cdb=None
+Namespace(local_rank=0, sample_weights='balance', num_workers=8, relabel_actions=True, goal_relabeling_strategy='uniform', augment=True, dtype='fp32', encoder='resnetv1-34-bridge', save_dir='gc_bc_save', ckpt_id=None, train_batch_size=256, gradient_accumulation_steps=1, eval_batch_size=256, max_lr=0.0003, min_lr=1e-05, weight_decay=1e-06, max_grad_norm=5.0, epochs=None, steps=300000, warmup_steps=10000, decay_steps=None, log_interval=5000, eval_interval=10000, save_interval=10000, save_best=True, main_metric='log_probs', method='gc_bc', random_seed=42, datasets=['/data/hyx/raw_icra_trajs', '/data/hyx/raw_flap_trajs', '/data/hyx/raw_bridge_data_v1_trajs', '/data/hyx/raw_rss_trajs', '/data/hyx/raw_bridge_data_v2_trajs', '/home/hyx/bridge_data_v2/bridge_torch/data_processing/scipted_trajs'], act_mean=[0.00019296819, 0.00013667766, -0.00014583133, -0.00018390431, -0.00030808983, 0.0002742527, 0.59716219], act_std=[0.00912848, 0.0127196, 0.01229497, 0.02606696, 0.02875283, 0.07807977, 0.48710242], goal_relabeling_kwargs={'reached_proportion': 0.0}, augment_kwargs={'random_resized_crop': {'size': [128, 128], 'scale': [0.8, 1.0], 'ratio': [0.9, 1.1], 'antialias': True}, 'color_jitter': {'brightness': 0.2, 'contrast': [0.8, 1.2], 'saturation': [0.8, 1.2], 'hue': 0.1}, 'augment_order': ['random_resized_crop', 'color_jitter']}, encoder_kwargs={'pooling_method': 'avg', 'add_spatial_coordinates': True, 'act': 'SiLU', 'input_img_shape': [128, 128], 'input_channels': 6})
+[2023-09-18 13:22:33,841] [INFO] [comm.py:637:init_distributed] cdb=None
+[2023-09-18 13:22:33,842] [INFO] [comm.py:668:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[2023-09-18 13:22:35,212] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed info: version=0.10.2, git-hash=unknown, git-branch=unknown
+[2023-09-18 13:22:38,192] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+Using /home/hyx/.cache/torch_extensions/py310_cu117 as PyTorch extensions root...
+Using /home/hyx/.cache/torch_extensions/py310_cu117 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home/hyx/.cache/torch_extensions/py310_cu117/fused_adam/build.ninja...
+Building extension module fused_adam...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module fused_adam...
+Time to load fused_adam op: 0.12854266166687012 seconds
+Loading extension module fused_adam...
+Time to load fused_adam op: 0.1022942066192627 seconds
+[2023-09-18 13:22:38,851] [INFO] [logging.py:96:log_dist] [Rank 0] Using DeepSpeed Optimizer param name adam as basic optimizer
+[2023-09-18 13:22:38,858] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Basic Optimizer = FusedAdam
+[2023-09-18 13:22:38,858] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Final Optimizer = adam
+[2023-09-18 13:22:38,858] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed using configured LR scheduler = WarmupDecayLR
+[2023-09-18 13:22:38,859] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed LR Scheduler = <deepspeed.runtime.lr_schedules.WarmupDecayLR object at 0x7fda1fbb3be0>
+[2023-09-18 13:22:38,859] [INFO] [logging.py:96:log_dist] [Rank 0] step=0, skipped=0, lr=[0.001], mom=[(0.9, 0.999)]
+[2023-09-18 13:22:38,859] [INFO] [config.py:963:print] DeepSpeedEngine configuration:
+[2023-09-18 13:22:38,859] [INFO] [config.py:967:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2023-09-18 13:22:38,859] [INFO] [config.py:967:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}
+[2023-09-18 13:22:38,859] [INFO] [config.py:967:print]   amp_enabled .................. False
+[2023-09-18 13:22:38,859] [INFO] [config.py:967:print]   amp_params ................... False
+[2023-09-18 13:22:38,859] [INFO] [config.py:967:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2023-09-18 13:22:38,859] [INFO] [config.py:967:print]   bfloat16_enabled ............. False
+[2023-09-18 13:22:38,859] [INFO] [config.py:967:print]   checkpoint_parallel_write_pipeline  False
+[2023-09-18 13:22:38,859] [INFO] [config.py:967:print]   checkpoint_tag_validation_enabled  True
+[2023-09-18 13:22:38,859] [INFO] [config.py:967:print]   checkpoint_tag_validation_fail  False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7fda1fbb3880>
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   communication_data_type ...... None
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   curriculum_enabled_legacy .... False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   curriculum_params_legacy ..... False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   data_efficiency_enabled ...... False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   dataloader_drop_last ......... False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   disable_allgather ............ False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   dump_state ................... False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   dynamic_loss_scale_args ...... None
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   eigenvalue_enabled ........... False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   eigenvalue_gas_boundary_resolution  1
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   eigenvalue_layer_num ......... 0
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   eigenvalue_max_iter .......... 100
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   eigenvalue_stability ......... 1e-06
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   eigenvalue_tol ............... 0.01
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   eigenvalue_verbose ........... False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   elasticity_enabled ........... False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   fp16_auto_cast ............... None
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   fp16_enabled ................. False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   fp16_master_weights_and_gradients  False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   global_rank .................. 0
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   grad_accum_dtype ............. None
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   gradient_accumulation_steps .. 1
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   gradient_clipping ............ 5.0
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   gradient_predivide_factor .... 1.0
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   initial_dynamic_scale ........ 65536
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   load_universal_checkpoint .... False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   loss_scale ................... 0
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   memory_breakdown ............. False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   mics_hierarchial_params_gather  False
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   mics_shard_size .............. -1
+[2023-09-18 13:22:38,860] [INFO] [config.py:967:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') enabled=False
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   optimizer_legacy_fusion ...... False
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   optimizer_name ............... adam
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   optimizer_params ............. {'weight_decay': 1e-06}
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0}
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   pld_enabled .................. False
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   pld_params ................... False
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   prescale_gradients ........... False
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   scheduler_name ............... WarmupDecayLR
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   scheduler_params ............. {'total_num_steps': 300000, 'warmup_min_lr': 1e-05, 'warmup_max_lr': 0.0003, 'warmup_num_steps': 10000}
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   sparse_attention ............. None
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   sparse_gradients_enabled ..... False
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   steps_per_print .............. 5000
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   train_batch_size ............. 256
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   train_micro_batch_size_per_gpu  128
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   use_node_local_storage ....... False
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   wall_clock_breakdown ......... False
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   world_size ................... 2
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   zero_allow_untested_optimizer  False
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   zero_config .................. stage=0 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500,000,000 allgather_partitions=True allgather_bucket_size=500,000,000 overlap_comm=False load_from_fp32_weights=True elastic_checkpoint=False offload_param=None offload_optimizer=None sub_group_size=1,000,000,000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50,000,000 param_persistence_threshold=100,000 model_persistence_threshold=sys.maxsize max_live_parameters=1,000,000,000 max_reuse_distance=1,000,000,000 gather_16bit_weights_on_model_save=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   zero_enabled ................. False
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   zero_force_ds_cpu_optimizer .. True
+[2023-09-18 13:22:38,861] [INFO] [config.py:967:print]   zero_optimization_stage ...... 0
+[2023-09-18 13:22:38,861] [INFO] [config.py:953:print_user_config]   json = {
+    "train_batch_size": 256, 
+    "gradient_accumulation_steps": 1, 
+    "steps_per_print": 5.000000e+03, 
+    "optimizer": {
+        "type": "Adam", 
+        "params": {
+            "weight_decay": 1e-06
+        }
+    }, 
+    "scheduler": {
+        "type": "WarmupDecayLR", 
+        "params": {
+            "total_num_steps": 3.000000e+05, 
+            "warmup_min_lr": 1e-05, 
+            "warmup_max_lr": 0.0003, 
+            "warmup_num_steps": 1.000000e+04
+        }
+    }, 
+    "gradient_clipping": 5.0, 
+    "bf16": {
+        "enabled": false
+    }, 
+    "fp16": {
+        "enabled": false, 
+        "fp16_master_weights_and_grads": false, 
+        "loss_scale": 0, 
+        "loss_scale_window": 500, 
+        "hysteresis": 2, 
+        "min_loss_scale": 1, 
+        "initial_scale_power": 15
+    }
+}
+2057 trajs in /data/hyx/raw_icra_trajs/train
+796 trajs in /data/hyx/raw_flap_trajs/train
+11442 trajs in /data/hyx/raw_bridge_data_v1_trajs/train
+8195 trajs in /data/hyx/raw_rss_trajs/train
+22072 trajs in /data/hyx/raw_bridge_data_v2_trajs/train
+8675 trajs in /home/hyx/bridge_data_v2/bridge_torch/data_processing/scipted_trajs/train
+[# train trajs before repeating]: 53237
+[# train trajs after repeating]: 109316
+
+237 trajs in /data/hyx/raw_icra_trajs/val
+148 trajs in /data/hyx/raw_flap_trajs/val
+1749 trajs in /data/hyx/raw_bridge_data_v1_trajs/val
+966 trajs in /data/hyx/raw_rss_trajs/val
+2752 trajs in /data/hyx/raw_bridge_data_v2_trajs/val
+1024 trajs in /home/hyx/bridge_data_v2/bridge_torch/data_processing/scipted_trajs/val
+[# val trajs before repeating]: 6876
+[# val trajs after repeating]: 13752
+
+237 trajs in /data/hyx/raw_icra_trajs/val
+148 trajs in /data/hyx/raw_flap_trajs/val
+1749 trajs in /data/hyx/raw_bridge_data_v1_trajs/val
+966 trajs in /data/hyx/raw_rss_trajs/val
+2752 trajs in /data/hyx/raw_bridge_data_v2_trajs/val
+1024 trajs in /home/hyx/bridge_data_v2/bridge_torch/data_processing/scipted_trajs/val
+[# val trajs before repeating]: 6876
+[# val trajs after repeating]: 13752
+
+[2023-09-18 13:59:13,416] [INFO] [logging.py:96:log_dist] [Rank 0] step=5000, skipped=0, lr=[0.00027817532531436136], mom=[(0.9, 0.999)]
+[2023-09-18 13:59:13,419] [INFO] [timer.py:260:stop] epoch=0/micro_step=5000/global_step=5000, RunningAvgSamplesPerSec=1222.2744055077999, CurrSamplesPerSec=337.4697961054039, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 5000] loss: 9.15594084777832
+[2023-09-18 14:56:53,990] [INFO] [logging.py:96:log_dist] [Rank 0] step=10000, skipped=0, lr=[0.0002999999999999999], mom=[(0.9, 0.999)]
+[2023-09-18 14:56:53,991] [INFO] [timer.py:260:stop] epoch=0/micro_step=10000/global_step=10000, RunningAvgSamplesPerSec=609.2016370291394, CurrSamplesPerSec=3650.9785002907206, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 10000] loss: 8.793172532844544
+[Step 10000] evaluating...
+{'log_probs': -8.597314862315411, 'mse': 4.329490734318821, 'pi_actions': -0.017135016633149338} [Local Rank]: 0
+{'log_probs': -8.597314862315411, 'mse': 4.329490734318821, 'pi_actions': -0.017135016633149338} [Local Rank]: 1
+[2023-09-18 15:00:42,970] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 10000 is about to be saved!
+/home/hyx/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py:1802: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/home/hyx/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py:1802: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+[2023-09-18 15:00:42,981] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/10000/mp_rank_00_model_states.pt
+[2023-09-18 15:00:42,981] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/10000/mp_rank_00_model_states.pt...
+[2023-09-18 15:00:42,984] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 10000 is ready now!
+[2023-09-18 15:00:43,329] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/10000/mp_rank_00_model_states.pt.
+[2023-09-18 15:00:43,329] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 10000 is ready now!
+[2023-09-18 15:30:20,669] [INFO] [logging.py:96:log_dist] [Rank 0] step=15000, skipped=0, lr=[0.000295001], mom=[(0.9, 0.999)]
+[2023-09-18 15:30:20,670] [INFO] [timer.py:260:stop] epoch=0/micro_step=15000/global_step=15000, RunningAvgSamplesPerSec=836.7568187787807, CurrSamplesPerSec=3684.63038114553, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 15000] loss: 8.587415156650543
+[2023-09-18 15:59:53,938] [INFO] [logging.py:96:log_dist] [Rank 0] step=20000, skipped=0, lr=[0.00029000099999999996], mom=[(0.9, 0.999)]
+[2023-09-18 15:59:53,939] [INFO] [timer.py:260:stop] epoch=0/micro_step=20000/global_step=20000, RunningAvgSamplesPerSec=923.3578112774292, CurrSamplesPerSec=3768.7449729209884, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 20000] loss: 8.551584357357026
+[Step 20000] evaluating...
+{'log_probs': -8.399529860076573, 'mse': 3.93392072700915, 'pi_actions': -0.00349259346524391} [Local Rank]: 0
+{'log_probs': -8.399529860076573, 'mse': 3.93392072700915, 'pi_actions': -0.00349259346524391} [Local Rank]: 1
+[2023-09-18 16:03:38,689] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 20000 is about to be saved!
+[2023-09-18 16:03:38,692] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/20000/mp_rank_00_model_states.pt
+[2023-09-18 16:03:38,692] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/20000/mp_rank_00_model_states.pt...
+[2023-09-18 16:03:38,693] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 20000 is ready now!
+[2023-09-18 16:03:39,034] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/20000/mp_rank_00_model_states.pt.
+[2023-09-18 16:03:39,035] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 20000 is ready now!
+[2023-09-18 16:32:50,919] [INFO] [logging.py:96:log_dist] [Rank 0] step=25000, skipped=0, lr=[0.000285001], mom=[(0.9, 0.999)]
+[2023-09-18 16:32:50,922] [INFO] [timer.py:260:stop] epoch=0/micro_step=25000/global_step=25000, RunningAvgSamplesPerSec=890.4391378697214, CurrSamplesPerSec=3449.1745175134274, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 25000] loss: 8.493643455410004
+[2023-09-18 17:02:56,545] [INFO] [logging.py:96:log_dist] [Rank 0] step=30000, skipped=0, lr=[0.000280001], mom=[(0.9, 0.999)]
+[2023-09-18 17:02:56,546] [INFO] [timer.py:260:stop] epoch=0/micro_step=30000/global_step=30000, RunningAvgSamplesPerSec=879.6906404630806, CurrSamplesPerSec=3625.730044403924, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 30000] loss: 8.278657208442688
+[Step 30000] evaluating...
+{'log_probs': -8.284678819122645, 'mse': 3.7042186387037814, 'pi_actions': -0.010512826201073537} [Local Rank]: 0
+{'log_probs': -8.284678819122645, 'mse': 3.7042186387037814, 'pi_actions': -0.010512826201073537} [Local Rank]: 1
+[2023-09-18 17:06:46,145] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 30000 is about to be saved!
+[2023-09-18 17:06:46,149] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/30000/mp_rank_00_model_states.pt
+[2023-09-18 17:06:46,149] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/30000/mp_rank_00_model_states.pt...
+[2023-09-18 17:06:46,150] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 30000 is ready now!
+[2023-09-18 17:06:46,510] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/30000/mp_rank_00_model_states.pt.
+[2023-09-18 17:06:46,510] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 30000 is ready now!
+[2023-09-18 17:35:47,304] [INFO] [logging.py:96:log_dist] [Rank 0] step=35000, skipped=0, lr=[0.000275001], mom=[(0.9, 0.999)]
+[2023-09-18 17:35:47,305] [INFO] [timer.py:260:stop] epoch=0/micro_step=35000/global_step=35000, RunningAvgSamplesPerSec=979.9296330370739, CurrSamplesPerSec=3560.6359750496586, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 35000] loss: 8.297751696586609
+[2023-09-18 18:05:07,770] [INFO] [logging.py:96:log_dist] [Rank 0] step=40000, skipped=0, lr=[0.00027000099999999996], mom=[(0.9, 0.999)]
+[2023-09-18 18:05:07,771] [INFO] [timer.py:260:stop] epoch=0/micro_step=40000/global_step=40000, RunningAvgSamplesPerSec=1070.183104507772, CurrSamplesPerSec=2840.8348453700983, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 40000] loss: 8.196546172332763
+[Step 40000] evaluating...
+{'log_probs': -8.19576238292934, 'mse': 3.5263857204952815, 'pi_actions': 0.01146076119811706} [Local Rank]: 0
+{'log_probs': -8.19576238292934, 'mse': 3.5263857204952815, 'pi_actions': 0.01146076119811706} [Local Rank]: 1
+[2023-09-18 18:08:59,607] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 40000 is about to be saved!
+[2023-09-18 18:08:59,611] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/40000/mp_rank_00_model_states.pt
+[2023-09-18 18:08:59,611] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/40000/mp_rank_00_model_states.pt...
+[2023-09-18 18:08:59,611] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 40000 is ready now!
+[2023-09-18 18:08:59,944] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/40000/mp_rank_00_model_states.pt.
+[2023-09-18 18:08:59,944] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 40000 is ready now!
+[2023-09-18 18:37:52,632] [INFO] [logging.py:96:log_dist] [Rank 0] step=45000, skipped=0, lr=[0.00026500099999999995], mom=[(0.9, 0.999)]
+[2023-09-18 18:37:52,635] [INFO] [timer.py:260:stop] epoch=0/micro_step=45000/global_step=45000, RunningAvgSamplesPerSec=1152.0392496483662, CurrSamplesPerSec=3370.970733943226, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 45000] loss: 8.221417389774322
+[2023-09-18 19:06:46,029] [INFO] [logging.py:96:log_dist] [Rank 0] step=50000, skipped=0, lr=[0.000260001], mom=[(0.9, 0.999)]
+[2023-09-18 19:06:46,030] [INFO] [timer.py:260:stop] epoch=0/micro_step=50000/global_step=50000, RunningAvgSamplesPerSec=1146.1907064809222, CurrSamplesPerSec=3391.1670251303576, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 50000] loss: 8.098470838069916
+[Step 50000] evaluating...
+{'log_probs': -8.147740361385386, 'mse': 3.430341704661289, 'pi_actions': 0.008123599326412217} [Local Rank]: 0
+{'log_probs': -8.147740361385386, 'mse': 3.430341704661289, 'pi_actions': 0.008123599326412217} [Local Rank]: 1
+[2023-09-18 19:10:57,278] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 50000 is about to be saved!
+[2023-09-18 19:10:57,281] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/50000/mp_rank_00_model_states.pt
+[2023-09-18 19:10:57,281] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/50000/mp_rank_00_model_states.pt...
+[2023-09-18 19:10:57,281] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 50000 is ready now!
+[2023-09-18 19:10:57,613] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/50000/mp_rank_00_model_states.pt.
+[2023-09-18 19:10:57,614] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 50000 is ready now!
+[2023-09-18 19:40:18,788] [INFO] [logging.py:96:log_dist] [Rank 0] step=55000, skipped=0, lr=[0.000255001], mom=[(0.9, 0.999)]
+[2023-09-18 19:40:18,790] [INFO] [timer.py:260:stop] epoch=0/micro_step=55000/global_step=55000, RunningAvgSamplesPerSec=1152.1513556292994, CurrSamplesPerSec=3482.161223265392, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 55000] loss: 8.128771208763123
+[2023-09-18 20:09:40,063] [INFO] [logging.py:96:log_dist] [Rank 0] step=60000, skipped=0, lr=[0.00025000099999999997], mom=[(0.9, 0.999)]
+[2023-09-18 20:09:40,064] [INFO] [timer.py:260:stop] epoch=0/micro_step=60000/global_step=60000, RunningAvgSamplesPerSec=1219.4037156546792, CurrSamplesPerSec=3397.7666305923153, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 60000] loss: 8.044233550071716
+[Step 60000] evaluating...
+{'log_probs': -8.12783839418159, 'mse': 3.390537810464543, 'pi_actions': 0.02757127570123346} [Local Rank]: 0
+{'log_probs': -8.12783839418159, 'mse': 3.390537810464543, 'pi_actions': 0.02757127570123346} [Local Rank]: 1
+[2023-09-18 20:13:34,089] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 60000 is about to be saved!
+[2023-09-18 20:13:34,093] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/60000/mp_rank_00_model_states.pt
+[2023-09-18 20:13:34,093] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/60000/mp_rank_00_model_states.pt...
+[2023-09-18 20:13:34,094] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 60000 is ready now!
+[2023-09-18 20:13:34,425] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/60000/mp_rank_00_model_states.pt.
+[2023-09-18 20:13:34,425] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 60000 is ready now!
+[2023-09-18 20:42:46,504] [INFO] [logging.py:96:log_dist] [Rank 0] step=65000, skipped=0, lr=[0.00024500099999999995], mom=[(0.9, 0.999)]
+[2023-09-18 20:42:46,505] [INFO] [timer.py:260:stop] epoch=0/micro_step=65000/global_step=65000, RunningAvgSamplesPerSec=1282.7562153740132, CurrSamplesPerSec=3894.912992694375, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 65000] loss: 8.042824406337738
+[2023-09-18 21:12:02,539] [INFO] [logging.py:96:log_dist] [Rank 0] step=70000, skipped=0, lr=[0.00024000099999999997], mom=[(0.9, 0.999)]
+[2023-09-18 21:12:02,540] [INFO] [timer.py:260:stop] epoch=0/micro_step=70000/global_step=70000, RunningAvgSamplesPerSec=1343.2475226774636, CurrSamplesPerSec=3370.5263052158407, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 70000] loss: 8.01523163576126
+[Step 70000] evaluating...
+{'log_probs': -8.084249163397997, 'mse': 3.303359313872268, 'pi_actions': 0.021130069268499328} [Local Rank]: 0
+{'log_probs': -8.084249163397997, 'mse': 3.303359313872268, 'pi_actions': 0.021130069268499328} [Local Rank]: 1
+[2023-09-18 21:15:43,525] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 70000 is about to be saved!
+[2023-09-18 21:15:43,528] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/70000/mp_rank_00_model_states.pt
+[2023-09-18 21:15:43,528] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/70000/mp_rank_00_model_states.pt...
+[2023-09-18 21:15:43,528] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 70000 is ready now!
+[2023-09-18 21:15:43,866] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/70000/mp_rank_00_model_states.pt.
+[2023-09-18 21:15:43,867] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 70000 is ready now!
+[2023-09-18 21:45:06,412] [INFO] [logging.py:96:log_dist] [Rank 0] step=75000, skipped=0, lr=[0.00023500099999999995], mom=[(0.9, 0.999)]
+[2023-09-18 21:45:06,414] [INFO] [timer.py:260:stop] epoch=0/micro_step=75000/global_step=75000, RunningAvgSamplesPerSec=1296.117667728439, CurrSamplesPerSec=3689.225914625766, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 75000] loss: 7.9314358229637145
+[2023-09-18 22:14:15,648] [INFO] [logging.py:96:log_dist] [Rank 0] step=80000, skipped=0, lr=[0.00023000099999999994], mom=[(0.9, 0.999)]
+[2023-09-18 22:14:15,649] [INFO] [timer.py:260:stop] epoch=0/micro_step=80000/global_step=80000, RunningAvgSamplesPerSec=1242.6942810985956, CurrSamplesPerSec=3975.717204480237, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 80000] loss: 7.97638144788742
+[Step 80000] evaluating...
+{'log_probs': -8.076254759434764, 'mse': 3.2873704888091133, 'pi_actions': -0.001978929603174748} [Local Rank]: 0
+{'log_probs': -8.076254759434764, 'mse': 3.2873704888091133, 'pi_actions': -0.001978929603174748} [Local Rank]: 1
+[2023-09-18 22:17:49,084] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 80000 is about to be saved!
+[2023-09-18 22:17:49,087] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/80000/mp_rank_00_model_states.pt
+[2023-09-18 22:17:49,087] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/80000/mp_rank_00_model_states.pt...
+[2023-09-18 22:17:49,088] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 80000 is ready now!
+[2023-09-18 22:17:49,421] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/80000/mp_rank_00_model_states.pt.
+[2023-09-18 22:17:49,422] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 80000 is ready now!
+[2023-09-18 22:47:01,799] [INFO] [logging.py:96:log_dist] [Rank 0] step=85000, skipped=0, lr=[0.00022500099999999998], mom=[(0.9, 0.999)]
+[2023-09-18 22:47:01,800] [INFO] [timer.py:260:stop] epoch=0/micro_step=85000/global_step=85000, RunningAvgSamplesPerSec=1200.8224543178499, CurrSamplesPerSec=3501.716462350758, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 85000] loss: 7.854315842437744
+[2023-09-18 23:16:46,994] [INFO] [logging.py:96:log_dist] [Rank 0] step=90000, skipped=0, lr=[0.00022000099999999997], mom=[(0.9, 0.999)]
+[2023-09-18 23:16:46,996] [INFO] [timer.py:260:stop] epoch=0/micro_step=90000/global_step=90000, RunningAvgSamplesPerSec=1188.9308473656113, CurrSamplesPerSec=3148.295213382006, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 90000] loss: 7.915860023212433
+[Step 90000] evaluating...
+{'log_probs': -8.066618900133575, 'mse': 3.268098768806657, 'pi_actions': -0.011847509348681617} [Local Rank]: 0
+{'log_probs': -8.066618900133575, 'mse': 3.268098768806657, 'pi_actions': -0.011847509348681617} [Local Rank]: 1
+[2023-09-18 23:20:52,792] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 90000 is about to be saved!
+[2023-09-18 23:20:52,796] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/90000/mp_rank_00_model_states.pt
+[2023-09-18 23:20:52,797] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/90000/mp_rank_00_model_states.pt...
+[2023-09-18 23:20:52,797] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 90000 is ready now!
+[2023-09-18 23:20:53,134] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/90000/mp_rank_00_model_states.pt.
+[2023-09-18 23:20:53,135] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 90000 is ready now!
+[2023-09-18 23:50:28,149] [INFO] [logging.py:96:log_dist] [Rank 0] step=95000, skipped=0, lr=[0.00021500099999999996], mom=[(0.9, 0.999)]
+[2023-09-18 23:50:28,150] [INFO] [timer.py:260:stop] epoch=0/micro_step=95000/global_step=95000, RunningAvgSamplesPerSec=1226.9545657312062, CurrSamplesPerSec=3402.4609573544417, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 95000] loss: 7.815212815761567
+[2023-09-19 00:23:06,498] [INFO] [logging.py:96:log_dist] [Rank 0] step=100000, skipped=0, lr=[0.00021000099999999997], mom=[(0.9, 0.999)]
+[2023-09-19 00:23:06,501] [INFO] [timer.py:260:stop] epoch=0/micro_step=100000/global_step=100000, RunningAvgSamplesPerSec=1266.075278158499, CurrSamplesPerSec=2628.80785012682, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 100000] loss: 7.887723042201996
+[Step 100000] evaluating...
+{'log_probs': -8.055112656078215, 'mse': 3.2450862897287402, 'pi_actions': 0.004071119671167497} [Local Rank]: 0
+{'log_probs': -8.055112656078215, 'mse': 3.2450862897287402, 'pi_actions': 0.004071119671167497} [Local Rank]: 1
+[2023-09-19 00:27:00,050] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 100000 is about to be saved!
+[2023-09-19 00:27:00,053] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/100000/mp_rank_00_model_states.pt
+[2023-09-19 00:27:00,053] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/100000/mp_rank_00_model_states.pt...
+[2023-09-19 00:27:00,054] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 100000 is ready now!
+[2023-09-19 00:27:00,399] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/100000/mp_rank_00_model_states.pt.
+[2023-09-19 00:27:00,400] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 100000 is ready now!
+[2023-09-19 01:09:49,309] [INFO] [logging.py:96:log_dist] [Rank 0] step=105000, skipped=0, lr=[0.00020500099999999996], mom=[(0.9, 0.999)]
+[2023-09-19 01:09:49,318] [INFO] [timer.py:260:stop] epoch=0/micro_step=105000/global_step=105000, RunningAvgSamplesPerSec=1290.1539682708838, CurrSamplesPerSec=1593.6798871985159, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 105000] loss: 7.831401924705506
+[2023-09-19 01:53:41,415] [INFO] [logging.py:96:log_dist] [Rank 0] step=110000, skipped=0, lr=[0.00020000099999999997], mom=[(0.9, 0.999)]
+[2023-09-19 01:53:41,424] [INFO] [timer.py:260:stop] epoch=0/micro_step=110000/global_step=110000, RunningAvgSamplesPerSec=1300.794954089489, CurrSamplesPerSec=2036.429027418746, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 110000] loss: 7.767519180393219
+[Step 110000] evaluating...
+{'log_probs': -8.035453913682453, 'mse': 3.205768836543762, 'pi_actions': 0.011725295149793681} [Local Rank]: 0
+{'log_probs': -8.035453913682453, 'mse': 3.205768836543762, 'pi_actions': 0.011725295149793681} [Local Rank]: 1
+[2023-09-19 01:58:04,395] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 110000 is about to be saved!
+[2023-09-19 01:58:04,408] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/110000/mp_rank_00_model_states.pt
+[2023-09-19 01:58:04,408] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/110000/mp_rank_00_model_states.pt...
+[2023-09-19 01:58:04,411] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 110000 is ready now!
+[2023-09-19 01:58:04,950] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/110000/mp_rank_00_model_states.pt.
+[2023-09-19 01:58:04,951] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 110000 is ready now!
+[2023-09-19 02:38:37,885] [INFO] [logging.py:96:log_dist] [Rank 0] step=115000, skipped=0, lr=[0.00019500099999999996], mom=[(0.9, 0.999)]
+[2023-09-19 02:38:37,887] [INFO] [timer.py:260:stop] epoch=0/micro_step=115000/global_step=115000, RunningAvgSamplesPerSec=1255.4634653714234, CurrSamplesPerSec=3625.852479443497, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 115000] loss: 7.786235194587707
+[2023-09-19 03:20:28,569] [INFO] [logging.py:96:log_dist] [Rank 0] step=120000, skipped=0, lr=[0.00019000099999999997], mom=[(0.9, 0.999)]
+[2023-09-19 03:20:28,571] [INFO] [timer.py:260:stop] epoch=0/micro_step=120000/global_step=120000, RunningAvgSamplesPerSec=1220.9090521382611, CurrSamplesPerSec=490.96607495754455, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 120000] loss: 7.707000985431671
+[Step 120000] evaluating...
+{'log_probs': -8.025492899847134, 'mse': 3.185846787024745, 'pi_actions': 0.009835024074176043} [Local Rank]: 0
+{'log_probs': -8.025492899847134, 'mse': 3.185846787024745, 'pi_actions': 0.009835024074176043} [Local Rank]: 1
+[2023-09-19 03:24:55,203] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 120000 is about to be saved!
+[2023-09-19 03:24:55,216] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/120000/mp_rank_00_model_states.pt
+[2023-09-19 03:24:55,216] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/120000/mp_rank_00_model_states.pt...
+[2023-09-19 03:24:55,218] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 120000 is ready now!
+[2023-09-19 03:24:55,627] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/120000/mp_rank_00_model_states.pt.
+[2023-09-19 03:24:55,627] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 120000 is ready now!
+[2023-09-19 04:08:06,464] [INFO] [logging.py:96:log_dist] [Rank 0] step=125000, skipped=0, lr=[0.00018500099999999996], mom=[(0.9, 0.999)]
+[2023-09-19 04:08:06,466] [INFO] [timer.py:260:stop] epoch=0/micro_step=125000/global_step=125000, RunningAvgSamplesPerSec=1218.0200970078688, CurrSamplesPerSec=126.63858293914379, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 125000] loss: 7.782660653877258
+[2023-09-19 04:37:31,428] [INFO] [logging.py:96:log_dist] [Rank 0] step=130000, skipped=0, lr=[0.00018000099999999995], mom=[(0.9, 0.999)]
+[2023-09-19 04:37:31,429] [INFO] [timer.py:260:stop] epoch=0/micro_step=130000/global_step=130000, RunningAvgSamplesPerSec=1190.3928469639832, CurrSamplesPerSec=121.22356222397792, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 130000] loss: 7.684497141933441
+[Step 130000] evaluating...
+{'log_probs': -8.0464293157201, 'mse': 3.2277196193888065, 'pi_actions': 0.011998693914251728} [Local Rank]: 0
+{'log_probs': -8.0464293157201, 'mse': 3.2277196193888065, 'pi_actions': 0.011998693914251728} [Local Rank]: 1
+[2023-09-19 05:10:37,541] [INFO] [logging.py:96:log_dist] [Rank 0] step=135000, skipped=0, lr=[0.000175001], mom=[(0.9, 0.999)]
+[2023-09-19 05:10:37,542] [INFO] [timer.py:260:stop] epoch=0/micro_step=135000/global_step=135000, RunningAvgSamplesPerSec=1166.681474239383, CurrSamplesPerSec=120.1661583557496, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 135000] loss: 7.69478170785904
+[2023-09-19 05:40:23,358] [INFO] [logging.py:96:log_dist] [Rank 0] step=140000, skipped=0, lr=[0.00017000099999999997], mom=[(0.9, 0.999)]
+[2023-09-19 05:40:23,359] [INFO] [timer.py:260:stop] epoch=0/micro_step=140000/global_step=140000, RunningAvgSamplesPerSec=1143.6692896668085, CurrSamplesPerSec=119.4597722620474, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 140000] loss: 7.70408306684494
+[Step 140000] evaluating...
+{'log_probs': -8.035924074913572, 'mse': 3.2067091370730925, 'pi_actions': 0.0015470712540374258} [Local Rank]: 1
+{'log_probs': -8.035924074913572, 'mse': 3.2067091370730925, 'pi_actions': 0.0015470712540374258} [Local Rank]: 0
+[2023-09-19 06:13:05,346] [INFO] [logging.py:96:log_dist] [Rank 0] step=145000, skipped=0, lr=[0.00016500099999999996], mom=[(0.9, 0.999)]
+[2023-09-19 06:13:05,348] [INFO] [timer.py:260:stop] epoch=0/micro_step=145000/global_step=145000, RunningAvgSamplesPerSec=1128.600013002278, CurrSamplesPerSec=3507.206605847403, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 145000] loss: 7.662439316177368
+[2023-09-19 06:42:09,864] [INFO] [logging.py:96:log_dist] [Rank 0] step=150000, skipped=0, lr=[0.00016000099999999997], mom=[(0.9, 0.999)]
+[2023-09-19 06:42:09,865] [INFO] [timer.py:260:stop] epoch=0/micro_step=150000/global_step=150000, RunningAvgSamplesPerSec=1110.7890168003066, CurrSamplesPerSec=3556.9794314752426, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 150000] loss: 7.685475374794007
+[Step 150000] evaluating...
+{'log_probs': -8.020658979395206, 'mse': 3.176178941946947, 'pi_actions': 0.016080594299464773} [Local Rank]: 1
+{'log_probs': -8.020658979395206, 'mse': 3.176178941946947, 'pi_actions': 0.016080594299464773} [Local Rank]: 0
+[2023-09-19 06:45:51,259] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 150000 is about to be saved!
+[2023-09-19 06:45:51,265] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/150000/mp_rank_00_model_states.pt
+[2023-09-19 06:45:51,265] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/150000/mp_rank_00_model_states.pt...
+[2023-09-19 06:45:51,266] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 150000 is ready now!
+[2023-09-19 06:45:51,603] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/150000/mp_rank_00_model_states.pt.
+[2023-09-19 06:45:51,603] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 150000 is ready now!
+[2023-09-19 07:15:07,238] [INFO] [logging.py:96:log_dist] [Rank 0] step=155000, skipped=0, lr=[0.00015500099999999996], mom=[(0.9, 0.999)]
+[2023-09-19 07:15:07,239] [INFO] [timer.py:260:stop] epoch=0/micro_step=155000/global_step=155000, RunningAvgSamplesPerSec=1094.5213260560727, CurrSamplesPerSec=3131.92185230342, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 155000] loss: 7.599652797317505
+[2023-09-19 07:44:45,316] [INFO] [logging.py:96:log_dist] [Rank 0] step=160000, skipped=0, lr=[0.00015000099999999998], mom=[(0.9, 0.999)]
+[2023-09-19 07:44:45,317] [INFO] [timer.py:260:stop] epoch=0/micro_step=160000/global_step=160000, RunningAvgSamplesPerSec=1081.543739351686, CurrSamplesPerSec=3670.0339200875005, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 160000] loss: 7.62955633468628
+[Step 160000] evaluating...
+{'log_probs': -8.035175667719313, 'mse': 3.205212329457414, 'pi_actions': 0.0016742034144919707} [Local Rank]: 1
+{'log_probs': -8.035175667719313, 'mse': 3.205212329457414, 'pi_actions': 0.0016742034144919707} [Local Rank]: 0
+[2023-09-19 08:16:46,194] [INFO] [logging.py:96:log_dist] [Rank 0] step=165000, skipped=0, lr=[0.00014500099999999996], mom=[(0.9, 0.999)]
+[2023-09-19 08:16:46,195] [INFO] [timer.py:260:stop] epoch=0/micro_step=165000/global_step=165000, RunningAvgSamplesPerSec=1070.8975784514266, CurrSamplesPerSec=3619.6310189992046, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 165000] loss: 7.580167293548584
+[2023-09-19 08:45:09,606] [INFO] [logging.py:96:log_dist] [Rank 0] step=170000, skipped=0, lr=[0.00014000099999999998], mom=[(0.9, 0.999)]
+[2023-09-19 08:45:09,607] [INFO] [timer.py:260:stop] epoch=0/micro_step=170000/global_step=170000, RunningAvgSamplesPerSec=1059.5137859774009, CurrSamplesPerSec=3575.7781818424014, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 170000] loss: 7.563489454650879
+[Step 170000] evaluating...
+{'log_probs': -8.018541605819074, 'mse': 3.171944185575717, 'pi_actions': -0.0031861377639318222} [Local Rank]: 1
+{'log_probs': -8.018541605819074, 'mse': 3.171944185575717, 'pi_actions': -0.0031861377639318222} [Local Rank]: 0
+[2023-09-19 08:48:50,708] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 170000 is about to be saved!
+[2023-09-19 08:48:50,714] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/170000/mp_rank_00_model_states.pt
+[2023-09-19 08:48:50,714] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/170000/mp_rank_00_model_states.pt...
+[2023-09-19 08:48:50,714] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 170000 is ready now!
+[2023-09-19 08:48:51,049] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/170000/mp_rank_00_model_states.pt.
+[2023-09-19 08:48:51,050] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 170000 is ready now!
+[2023-09-19 09:17:24,546] [INFO] [logging.py:96:log_dist] [Rank 0] step=175000, skipped=0, lr=[0.00013500099999999996], mom=[(0.9, 0.999)]
+[2023-09-19 09:17:24,548] [INFO] [timer.py:260:stop] epoch=0/micro_step=175000/global_step=175000, RunningAvgSamplesPerSec=1048.9830212210568, CurrSamplesPerSec=3737.6532893339877, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 175000] loss: 7.588256110572815
+[2023-09-19 09:46:40,954] [INFO] [logging.py:96:log_dist] [Rank 0] step=180000, skipped=0, lr=[0.00013000099999999998], mom=[(0.9, 0.999)]
+[2023-09-19 09:46:40,955] [INFO] [timer.py:260:stop] epoch=0/micro_step=180000/global_step=180000, RunningAvgSamplesPerSec=1059.7379436958245, CurrSamplesPerSec=2415.11728506136, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 180000] loss: 7.565172501659394
+[Step 180000] evaluating...
+{'log_probs': -8.028141353549254, 'mse': 3.1911436979607233, 'pi_actions': -0.0013295874994503683} [Local Rank]: 1
+{'log_probs': -8.028141353549254, 'mse': 3.1911436979607233, 'pi_actions': -0.0013295874994503683} [Local Rank]: 0
+[2023-09-19 10:19:05,651] [INFO] [logging.py:96:log_dist] [Rank 0] step=185000, skipped=0, lr=[0.000125001], mom=[(0.9, 0.999)]
+[2023-09-19 10:19:05,652] [INFO] [timer.py:260:stop] epoch=0/micro_step=185000/global_step=185000, RunningAvgSamplesPerSec=1049.93600888072, CurrSamplesPerSec=3456.5917150620016, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 185000] loss: 7.561333601951599
+[2023-09-19 10:47:35,991] [INFO] [logging.py:96:log_dist] [Rank 0] step=190000, skipped=0, lr=[0.00012000099999999998], mom=[(0.9, 0.999)]
+[2023-09-19 10:47:35,992] [INFO] [timer.py:260:stop] epoch=0/micro_step=190000/global_step=190000, RunningAvgSamplesPerSec=1040.5077523128878, CurrSamplesPerSec=3736.7297632139425, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 190000] loss: 7.508249244403839
+[Step 190000] evaluating...
+{'log_probs': -8.003352032411124, 'mse': 3.1415650523325565, 'pi_actions': 0.0012040147317874314} [Local Rank]: 1
+{'log_probs': -8.003352032411124, 'mse': 3.1415650523325565, 'pi_actions': 0.0012040147317874314} [Local Rank]: 0
+[2023-09-19 10:51:23,071] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint 190000 is about to be saved!
+[2023-09-19 10:51:23,078] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: gc_bc_save/190000/mp_rank_00_model_states.pt
+[2023-09-19 10:51:23,078] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving gc_bc_save/190000/mp_rank_00_model_states.pt...
+[2023-09-19 10:51:23,078] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 190000 is ready now!
+[2023-09-19 10:51:23,452] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved gc_bc_save/190000/mp_rank_00_model_states.pt.
+[2023-09-19 10:51:23,453] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint 190000 is ready now!
+[2023-09-19 11:20:27,360] [INFO] [logging.py:96:log_dist] [Rank 0] step=195000, skipped=0, lr=[0.00011500099999999998], mom=[(0.9, 0.999)]
+[2023-09-19 11:20:27,362] [INFO] [timer.py:260:stop] epoch=0/micro_step=195000/global_step=195000, RunningAvgSamplesPerSec=1032.3220257332948, CurrSamplesPerSec=461.7769717435498, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 195000] loss: 7.5537709192276
+[2023-09-19 11:49:54,923] [INFO] [logging.py:96:log_dist] [Rank 0] step=200000, skipped=0, lr=[0.00011000099999999999], mom=[(0.9, 0.999)]
+[2023-09-19 11:49:54,924] [INFO] [timer.py:260:stop] epoch=0/micro_step=200000/global_step=200000, RunningAvgSamplesPerSec=1022.711106226442, CurrSamplesPerSec=113.33398605762339, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 200000] loss: 7.485577699184418
+[Step 200000] evaluating...
+{'log_probs': -8.009139987755235, 'mse': 3.1531410000630595, 'pi_actions': 0.007152957130714553} [Local Rank]: 1
+{'log_probs': -8.009139987755235, 'mse': 3.1531410000630595, 'pi_actions': 0.007152957130714553} [Local Rank]: 0
+[2023-09-19 12:22:17,025] [INFO] [logging.py:96:log_dist] [Rank 0] step=205000, skipped=0, lr=[0.00010500099999999998], mom=[(0.9, 0.999)]
+[2023-09-19 12:22:17,028] [INFO] [timer.py:260:stop] epoch=0/micro_step=205000/global_step=205000, RunningAvgSamplesPerSec=1015.2062562258378, CurrSamplesPerSec=121.81297937813929, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 205000] loss: 7.489214339447021
+[2023-09-19 12:50:53,223] [INFO] [logging.py:96:log_dist] [Rank 0] step=210000, skipped=0, lr=[0.00010000099999999998], mom=[(0.9, 0.999)]
+[2023-09-19 12:50:53,224] [INFO] [timer.py:260:stop] epoch=0/micro_step=210000/global_step=210000, RunningAvgSamplesPerSec=1007.9050441247427, CurrSamplesPerSec=118.72810344080257, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 210000] loss: 7.488288639068603
+[Step 210000] evaluating...
+{'log_probs': -8.014695930274087, 'mse': 3.1642528367473863, 'pi_actions': 0.005336214542321473} [Local Rank]: 1
+{'log_probs': -8.014695930274087, 'mse': 3.1642528367473863, 'pi_actions': 0.005336214542321473} [Local Rank]: 0
+[2023-09-19 13:23:49,010] [INFO] [logging.py:96:log_dist] [Rank 0] step=215000, skipped=0, lr=[9.500099999999998e-05], mom=[(0.9, 0.999)]
+[2023-09-19 13:23:49,011] [INFO] [timer.py:260:stop] epoch=0/micro_step=215000/global_step=215000, RunningAvgSamplesPerSec=1005.4321218502996, CurrSamplesPerSec=181.75948994894105, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 215000] loss: 7.497615436077118
+[2023-09-19 13:52:49,676] [INFO] [logging.py:96:log_dist] [Rank 0] step=220000, skipped=0, lr=[9.000099999999998e-05], mom=[(0.9, 0.999)]
+[2023-09-19 13:52:49,681] [INFO] [timer.py:260:stop] epoch=0/micro_step=220000/global_step=220000, RunningAvgSamplesPerSec=998.961101887498, CurrSamplesPerSec=120.37971824821315, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 220000] loss: 7.473186588191986
+[Step 220000] evaluating...
+{'log_probs': -8.013586050310776, 'mse': 3.1620330669264463, 'pi_actions': 0.0030152955375352436} [Local Rank]: 1
+{'log_probs': -8.013586050310776, 'mse': 3.1620330669264463, 'pi_actions': 0.0030152955375352436} [Local Rank]: 0
+[2023-09-19 14:31:52,344] [INFO] [logging.py:96:log_dist] [Rank 0] step=225000, skipped=0, lr=[8.5001e-05], mom=[(0.9, 0.999)]
+[2023-09-19 14:31:52,364] [INFO] [timer.py:260:stop] epoch=0/micro_step=225000/global_step=225000, RunningAvgSamplesPerSec=1001.3929453262509, CurrSamplesPerSec=2181.3468769172637, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 225000] loss: 7.4388184783935545
+[2023-09-19 15:10:29,819] [INFO] [logging.py:96:log_dist] [Rank 0] step=230000, skipped=0, lr=[8.000099999999998e-05], mom=[(0.9, 0.999)]
+[2023-09-19 15:10:29,822] [INFO] [timer.py:260:stop] epoch=0/micro_step=230000/global_step=230000, RunningAvgSamplesPerSec=1008.2000332929935, CurrSamplesPerSec=3776.4328537212436, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 230000] loss: 7.495466359043121
+[Step 230000] evaluating...
+{'log_probs': -8.02150839311182, 'mse': 3.1778777700034544, 'pi_actions': 0.0024866384097912606} [Local Rank]: 0
+{'log_probs': -8.02150839311182, 'mse': 3.1778777700034544, 'pi_actions': 0.0024866384097912606} [Local Rank]: 1
+[2023-09-19 15:44:32,374] [INFO] [logging.py:96:log_dist] [Rank 0] step=235000, skipped=0, lr=[7.5001e-05], mom=[(0.9, 0.999)]
+[2023-09-19 15:44:32,384] [INFO] [timer.py:260:stop] epoch=0/micro_step=235000/global_step=235000, RunningAvgSamplesPerSec=1010.6517369559525, CurrSamplesPerSec=1985.7263773047546, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 235000] loss: 7.411904956245422
+[2023-09-19 16:26:39,164] [INFO] [logging.py:96:log_dist] [Rank 0] step=240000, skipped=0, lr=[7.0001e-05], mom=[(0.9, 0.999)]
+[2023-09-19 16:26:39,166] [INFO] [timer.py:260:stop] epoch=0/micro_step=240000/global_step=240000, RunningAvgSamplesPerSec=994.0006632962738, CurrSamplesPerSec=2122.636070162676, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 240000] loss: 7.40043066740036
+[Step 240000] evaluating...
+{'log_probs': -8.01685020215082, 'mse': 3.1685613725017676, 'pi_actions': 0.003223420586395162} [Local Rank]: 0
+{'log_probs': -8.01685020215082, 'mse': 3.1685613725017676, 'pi_actions': 0.003223420586395162} [Local Rank]: 1
+[2023-09-19 17:13:08,977] [INFO] [logging.py:96:log_dist] [Rank 0] step=245000, skipped=0, lr=[6.5001e-05], mom=[(0.9, 0.999)]
+[2023-09-19 17:13:08,978] [INFO] [timer.py:260:stop] epoch=0/micro_step=245000/global_step=245000, RunningAvgSamplesPerSec=982.5735747427854, CurrSamplesPerSec=412.09494893437864, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 245000] loss: 7.415575291442871
+[2023-09-19 17:54:53,950] [INFO] [logging.py:96:log_dist] [Rank 0] step=250000, skipped=0, lr=[6.000099999999998e-05], mom=[(0.9, 0.999)]
+[2023-09-19 17:54:53,951] [INFO] [timer.py:260:stop] epoch=0/micro_step=250000/global_step=250000, RunningAvgSamplesPerSec=977.4321220538416, CurrSamplesPerSec=1797.8397696068582, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 250000] loss: 7.427030375099182
+[Step 250000] evaluating...
+{'log_probs': -8.005931204880655, 'mse': 3.1467234177428405, 'pi_actions': 0.008540935257776201} [Local Rank]: 0
+{'log_probs': -8.005931204880655, 'mse': 3.1467234177428405, 'pi_actions': 0.008540935257776201} [Local Rank]: 1
+[2023-09-19 18:40:16,356] [INFO] [logging.py:96:log_dist] [Rank 0] step=255000, skipped=0, lr=[5.500099999999999e-05], mom=[(0.9, 0.999)]
+[2023-09-19 18:40:16,363] [INFO] [timer.py:260:stop] epoch=0/micro_step=255000/global_step=255000, RunningAvgSamplesPerSec=965.0354604131526, CurrSamplesPerSec=70.66143383094497, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 255000] loss: 7.403717599105835
+[2023-09-19 19:22:55,875] [INFO] [logging.py:96:log_dist] [Rank 0] step=260000, skipped=0, lr=[5.000099999999999e-05], mom=[(0.9, 0.999)]
+[2023-09-19 19:22:55,894] [INFO] [timer.py:260:stop] epoch=0/micro_step=260000/global_step=260000, RunningAvgSamplesPerSec=951.3830689844654, CurrSamplesPerSec=1047.2097185703028, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 260000] loss: 7.364878678131103
+[Step 260000] evaluating...
+{'log_probs': -8.017824186213364, 'mse': 3.170509365812165, 'pi_actions': 0.0052874688371468475} [Local Rank]: 1
+{'log_probs': -8.017824186213364, 'mse': 3.170509365812165, 'pi_actions': 0.0052874688371468475} [Local Rank]: 0
+[2023-09-19 20:09:45,556] [INFO] [logging.py:96:log_dist] [Rank 0] step=265000, skipped=0, lr=[4.500099999999999e-05], mom=[(0.9, 0.999)]
+[2023-09-19 20:09:45,558] [INFO] [timer.py:260:stop] epoch=0/micro_step=265000/global_step=265000, RunningAvgSamplesPerSec=940.2788659118129, CurrSamplesPerSec=3052.050322617322, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 265000] loss: 7.396695149326325
+[2023-09-19 20:38:57,352] [INFO] [logging.py:96:log_dist] [Rank 0] step=270000, skipped=0, lr=[4.0001e-05], mom=[(0.9, 0.999)]
+[2023-09-19 20:38:57,354] [INFO] [timer.py:260:stop] epoch=0/micro_step=270000/global_step=270000, RunningAvgSamplesPerSec=946.7470330181029, CurrSamplesPerSec=3489.9252898407053, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 270000] loss: 7.366204547595978
+[Step 270000] evaluating...
+{'log_probs': -8.013375094655796, 'mse': 3.1616111749948734, 'pi_actions': 0.007725271128825179} [Local Rank]: 1
+{'log_probs': -8.013375094655796, 'mse': 3.1616111749948734, 'pi_actions': 0.007725271128825179} [Local Rank]: 0
+[2023-09-19 21:11:46,978] [INFO] [logging.py:96:log_dist] [Rank 0] step=275000, skipped=0, lr=[3.500099999999999e-05], mom=[(0.9, 0.999)]
+[2023-09-19 21:11:46,980] [INFO] [timer.py:260:stop] epoch=0/micro_step=275000/global_step=275000, RunningAvgSamplesPerSec=953.2006410328388, CurrSamplesPerSec=3529.58405322604, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 275000] loss: 7.3379805869102475
+[2023-09-19 21:41:17,070] [INFO] [logging.py:96:log_dist] [Rank 0] step=280000, skipped=0, lr=[3.0001e-05], mom=[(0.9, 0.999)]
+[2023-09-19 21:41:17,071] [INFO] [timer.py:260:stop] epoch=0/micro_step=280000/global_step=280000, RunningAvgSamplesPerSec=965.0968736051406, CurrSamplesPerSec=3482.9631897860413, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 280000] loss: 7.3530766962051395
+[Step 280000] evaluating...
+{'log_probs': -8.024061072881207, 'mse': 3.182983145525982, 'pi_actions': 0.004444020223077043} [Local Rank]: 1
+{'log_probs': -8.024061072881207, 'mse': 3.182983145525982, 'pi_actions': 0.004444020223077043} [Local Rank]: 0
+[2023-09-19 22:14:50,533] [INFO] [logging.py:96:log_dist] [Rank 0] step=285000, skipped=0, lr=[2.5001e-05], mom=[(0.9, 0.999)]
+[2023-09-19 22:14:50,536] [INFO] [timer.py:260:stop] epoch=0/micro_step=285000/global_step=285000, RunningAvgSamplesPerSec=975.3299263339744, CurrSamplesPerSec=2961.6787543615274, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 285000] loss: 7.356830669307708
+[2023-09-19 22:44:23,649] [INFO] [logging.py:96:log_dist] [Rank 0] step=290000, skipped=0, lr=[2.0001e-05], mom=[(0.9, 0.999)]
+[2023-09-19 22:44:23,651] [INFO] [timer.py:260:stop] epoch=0/micro_step=290000/global_step=290000, RunningAvgSamplesPerSec=977.061332677786, CurrSamplesPerSec=3057.6735703932363, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 290000] loss: 7.343284949207306
+[Step 290000] evaluating...
+{'log_probs': -8.018855612914113, 'mse': 3.172572241673608, 'pi_actions': 0.0049114941149492825} [Local Rank]: 1
+{'log_probs': -8.018855612914113, 'mse': 3.172572241673608, 'pi_actions': 0.0049114941149492825} [Local Rank]: 0
+[2023-09-19 23:17:51,255] [INFO] [logging.py:96:log_dist] [Rank 0] step=295000, skipped=0, lr=[1.5001000000000001e-05], mom=[(0.9, 0.999)]
+[2023-09-19 23:17:51,256] [INFO] [timer.py:260:stop] epoch=0/micro_step=295000/global_step=295000, RunningAvgSamplesPerSec=988.7937682620928, CurrSamplesPerSec=3608.8765561560595, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 295000] loss: 7.308890386676788
+[2023-09-19 23:48:02,700] [INFO] [logging.py:96:log_dist] [Rank 0] step=300000, skipped=0, lr=[1.0001000000000001e-05], mom=[(0.9, 0.999)]
+[2023-09-19 23:48:02,702] [INFO] [timer.py:260:stop] epoch=0/micro_step=300000/global_step=300000, RunningAvgSamplesPerSec=999.8572250766173, CurrSamplesPerSec=3394.232918066782, MemAllocated=0.27GB, MaxMemAllocated=2.15GB
+[Step 300000] loss: 7.345600463199616
+[Step 300000] evaluating...
+{'log_probs': -8.014521787688944, 'mse': 3.1639045559057712, 'pi_actions': 0.002820882243218548} [Local Rank]: 1
+{'log_probs': -8.013018625677278, 'mse': 3.160898217934492, 'pi_actions': 0.0030043455672759804} [Local Rank]: 0
+Achieve best log_probs -8.003352032411124 on evaluation set at step 190000.
+Achieve best log_probs -8.003352032411124 on evaluation set at step 190000.
+[2023-09-19 23:52:01,649] [INFO] [launch.py:347:main] Process 449190 exits successfully.
+[2023-09-19 23:52:02,657] [INFO] [launch.py:347:main] Process 449189 exits successfully.
