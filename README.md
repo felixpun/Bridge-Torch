@@ -1,6 +1,6 @@
 # Pytorch BC/RL Implementations for BridgeData V2
 
-This repository provides Deepspeed-based distributed training code for [BridgeData V2](https://rail-berkeley.github.io/bridgedata/). Since most open-source LLMs are implemented with Pytorch and require memory-efficient distributed training frameworks to fine-tune on, we believe this repository can facilitate the application of Multimodal LLMs on this field.
+This repository provides distributed training code (based on Deepspeed) for [BridgeData V2](https://rail-berkeley.github.io/bridgedata/). Since most open-source LLMs are implemented with Pytorch and require memory-efficient distributed training frameworks to fine-tune on, we believe this repository can facilitate the application of Multimodal LLMs on this field.
 
 We provide implementations for the following methods:
 
@@ -35,6 +35,7 @@ deepspeed src/train.py \
 ```
 
 Hyperparameters can be modified in `src/config.py`.
+The training log is expected to look like `train.log`.
 
 ## Evaluation
 
