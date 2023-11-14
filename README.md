@@ -4,10 +4,9 @@ This repository provides distributed training code (based on Deepspeed) for [Bri
 
 We provide implementations for the following methods:
 
-- Goal-conditioned BC
+- Visual goal-conditioned BC
 - RT-1 (TODO)
-
-A novel generative vision-language-action model is under development by us. Stay tuned.
+- A novel generative vision-language-action model (TODO)
 
 ## Environment
 
